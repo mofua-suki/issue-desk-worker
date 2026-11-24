@@ -1,0 +1,65 @@
+name: Verify worker
+on:
+  push:
+    branches: ['**']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: [self-hosted, Linux, X64, pc-ci]
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+          cache-dependency-path: go.sum
+      - id: versions
+        run: |
+          echo "node=$(jq -r '.node' deploy/versions.json)" >> "$GITHUB_OUTPUT"
+          echo "pnpm=$(jq -r '.pnpm' deploy/versions.json)" >> "$GITHUB_OUTPUT"
+      - uses: pnpm/action-setup@v5
+        with:
+          version: ${{ steps.versions.outputs.pnpm }}
+          dest: ${{ runner.temp }}/issue-desk-ci-pnpm
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ steps.versions.outputs.node }}
+      - run: node --version
+      - name: Format and dead code
+        run: |
+          set -eu
+          result=$(gofmt -l .)
+          test -z "$result"
+          result=$(go run golang.org/x/tools/cmd/deadcode@v0.52.0 -test ./...)
+          test -z "$result"
+      - name: Run the fixed checks as the Worker UID
+        run: |
+          if [ "$(id -u)" != 1000 ]; then
+            echo "The pc-ci runner must run as UID 1000 for Worker verification." >&2
+            exit 1
+          fi
+          work=$(mktemp -d "$RUNNER_TEMP/issue-desk-ci.XXXXXXXX")
+          trap 'rm -rf -- "$work"' EXIT
+          mkdir "$work/source" "$work/home" "$work/jdk"
+          git archive HEAD | tar -x -C "$work/source"
+          jdk_url=$(jq -er '.jdk.url' deploy/sdk-release.json)
+          jdk_sha256=$(jq -er '.jdk.sha256' deploy/sdk-release.json)
+          curl --fail --location --silent --show-error --retry 2 --max-time 180 \
+            --output "$work/jdk.tar.gz" "$jdk_url"
+          printf '%s  %s\n' "$jdk_sha256" "$work/jdk.tar.gz" | sha256sum --check -
+          tar -xzf "$work/jdk.tar.gz" -C "$work/jdk" --strip-components=1
+          test -x "$work/jdk/bin/javac"
+          username=$(id -un)
+          env -i \
+            HOME="$work/home" USER="$username" LOGNAME="$username" PATH="$PATH" LANG=C.UTF-8 CI=true JAVA_HOME="$work/jdk" \
+            XDG_CONFIG_HOME="$work/home/.config" XDG_CACHE_HOME="$work/home/.cache" \
+            XDG_DATA_HOME="$work/home/.local/share" XDG_STATE_HOME="$work/home/.local/state" bash -euc '
+            cd "$1"
+            pnpm --version
+            docker info --format "{{.ServerVersion}}"
+            go test -race -timeout 30m ./...
+            go vet ./...
+          ' bash "$work/source"

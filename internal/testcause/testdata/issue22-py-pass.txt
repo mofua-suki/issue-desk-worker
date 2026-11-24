@@ -1,0 +1,8 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-9.2.0, pluggy-1.7.0
+rootdir: /tmp/issue22-fixture/py
+collected 2 items / 1 deselected / 1 selected
+
+test_sample.py .                                                         [100%]
+
+======================= 1 passed, 1 deselected in 0.00s ========================

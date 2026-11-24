@@ -1,0 +1,4 @@
+# example.com/sample [example.com/sample.test]
+./bad.go:2:9: undefined: missingSymbol
+FAIL	example.com/sample [build failed]
+FAIL

@@ -1,0 +1,52 @@
+name: issue-desk-client
+x-client: &client
+  pull_policy: never
+  restart: unless-stopped
+  init: true
+  stop_grace_period: 60s
+  security_opt:
+    - no-new-privileges:true
+    - seccomp=unconfined
+    - apparmor=unconfined
+  cap_drop:
+    - ALL
+  logging:
+    driver: json-file
+    options:
+      max-size: '10m'
+      max-file: '5'
+x-environment: &environment
+  ISSUE_DESK_CONFIG: /state/config.local.json
+  ISSUE_DESK_CLAUDE: /opt/agent-tools/bin/claude
+  ISSUE_DESK_SANDBOX_TMPFS_DIR: /sandbox-tmp
+  TZ: ${TZ:-Asia/Tokyo}
+services:
+  issue-desk-client:
+    <<: *client
+    image: ${REGISTRY}/issue-desk-client${FLAVOR}:${ISSUE_DESK_CLIENT_BLUE_TAG:-${ISSUE_DESK_CLIENT_TAG}}
+    volumes:
+      - issue-desk-worker-state:/state
+      - type: bind
+        source: ${CLAUDE_API_KEY_FILE:-/dev/null}
+        target: /state/private/claude-api-key
+        read_only: true
+        bind:
+          create_host_path: false
+      - ${CODEX_AUTH_DIR:-issue-desk-worker-codex}:/data/codex
+      - issue-desk-worker-cli:/data/claude
+      - issue-desk-worker-agy:/data/agy
+    tmpfs:
+      - /sandbox-tmp:size=512m,mode=1777
+    environment:
+      <<: *environment
+    ports:
+      - '${WEBHOOK_BIND:-127.0.0.1}:${WEBHOOK_PORT:-8790}:8790'
+volumes:
+  issue-desk-worker-state:
+    external: true
+  issue-desk-worker-codex:
+    external: true
+  issue-desk-worker-cli:
+    external: true
+  issue-desk-worker-agy:
+    name: issue-desk-worker-agy

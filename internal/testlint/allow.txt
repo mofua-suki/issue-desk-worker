@@ -1,0 +1,3 @@
+internal/hostd/install_assets_test.go|runInstallWithShippedLinuxAssets|a:製品ファイルの文字列照合	配布するupdate-linux.shとcompose.yamlを実際に使用して更新・失敗時の復旧を検証するため資材を配置する
+internal/testlint/testlint_test.go|(ファイル単位: テスト名を特定不可)|b:go/ast	検査器がGoテストを解析するため必要
+internal/testlint/testlint_test.go|(ファイル単位: テスト名を特定不可)|b:go/parser	検査器がGoテストを解析するため必要

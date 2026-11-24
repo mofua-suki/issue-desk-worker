@@ -1,0 +1,56 @@
+# このイメージは固定CLIとNodeだけを構築し、アプリケーションのコード・設定・認証を含めない。
+FROM node:26.13.1-bookworm-slim AS versions
+COPY deploy/versions.json deploy/image-versions.mts /opt/image-tools/
+RUN node /opt/image-tools/image-versions.mts
+
+FROM golang:1.27.4-bookworm AS caddy-build
+COPY --from=versions /tmp/image-versions.env /tmp/image-versions.env
+COPY deploy/install-caddy.sh /opt/image-tools/install-caddy.sh
+RUN sh /opt/image-tools/install-caddy.sh /tmp/image-versions.env
+
+FROM node:26.13.1-bookworm-slim AS tools
+COPY deploy/versions.json deploy/image-versions.mts deploy/install-node.sh deploy/install-caddy.sh deploy/install-agent-tools.mts deploy/install-antigravity.mts deploy/antigravity-release.json deploy/check-image-tools.mts deploy/tools-policy.test.mts deploy/install-sdks.mts deploy/sdk-release.json /opt/image-tools/
+RUN node /opt/image-tools/image-versions.mts \
+ && apt-get update \
+ && apt-get install -y --no-install-recommends git ca-certificates curl xz-utils unzip \
+ && rm -rf /var/lib/apt/lists/* \
+ && sh /opt/image-tools/install-node.sh \
+ && node /opt/image-tools/install-sdks.mts \
+ && git config --system --add safe.directory /opt/flutter \
+ && chown -R root:root /opt/jdk /opt/gradle \
+ && chown -R node:node /opt/flutter \
+ && install -d -o node -g node -m 755 /opt/flutter-pub-cache \
+ && mkdir -p /opt/agent-tools/bin \
+ && chown -R node:node /opt/agent-tools
+ENV NPM_CONFIG_PREFIX=/opt/agent-tools PNPM_HOME=/opt/agent-tools/bin DISABLE_AUTOUPDATER=1 \
+ JAVA_HOME=/opt/jdk FLUTTER_SUPPRESS_ANALYTICS=true \
+ PATH=/opt/agent-tools/bin:/opt/jdk/bin:/opt/gradle/bin:/opt/flutter/bin:/usr/local/bin:/usr/bin:/bin
+COPY --from=caddy-build /out/caddy /opt/agent-tools/bin/caddy
+USER node
+RUN test -w /opt/agent-tools/bin \
+ && ISSUE_DESK_IMAGE_CADDY=/opt/agent-tools/bin/caddy node --test /opt/image-tools/tools-policy.test.mts \
+ && node /opt/image-tools/install-agent-tools.mts \
+ && node /opt/image-tools/install-antigravity.mts
+COPY --chown=node:node deploy/agy.sh /opt/agent-tools/bin/agy
+# flutter test に要る共通の成果物（Dart SDK・flutter_tester）を先に取り、実行時は bin/cache の印だけを書く。
+RUN chmod 755 /opt/agent-tools/bin/agy \
+ && PUB_CACHE=/opt/flutter-pub-cache flutter precache --universal --no-android --no-ios --no-web --no-linux --no-windows --no-macos --no-fuchsia \
+ && flutter --version \
+ && chmod -R a+rX /opt/flutter /opt/flutter-pub-cache \
+ && chmod -R go-w /opt/flutter-pub-cache \
+ && node /opt/image-tools/check-image-tools.mts
+
+# Cache is writable like the runtime policy; its writable parent cannot prevent replacing a snapshot.
+FROM tools AS flutter-check
+USER root
+RUN mkdir -p /home/node/.pub-cache && chown root:root /home/node/.pub-cache && chmod 700 /home/node/.pub-cache \
+ && find /opt/flutter/bin/cache -mindepth 1 -type d -exec chmod go-w {} + \
+ && chgrp 1001 /opt/flutter/bin/cache && chmod g+rwx /opt/flutter/bin/cache \
+ && find /opt/flutter/bin/cache -maxdepth 1 -type f \( -name '*.stamp' -o -name 'engine.realm' -o -name '*lock*' \) -exec chgrp 1001 {} + -exec chmod g+rw {} +
+USER 1001:1001
+RUN test ! -r /home/node/.pub-cache && test ! -w /opt/flutter-pub-cache && node /opt/image-tools/check-image-tools.mts --flutter-readonly && touch /tmp/flutter-check-ok
+
+FROM tools AS tools-checked
+COPY --from=flutter-check /tmp/flutter-check-ok /tmp/flutter-check-ok
+ARG ISSUE_DESK_TOOLS_REVISION
+LABEL org.opencontainers.image.revision=${ISSUE_DESK_TOOLS_REVISION}

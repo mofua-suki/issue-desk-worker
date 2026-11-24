@@ -1,0 +1,20 @@
+{
+  "source": "Issue #297 instructions: controller-provided dispatchRecord.events excerpt; UTC; not independently retrieved",
+  "renewResponses": null,
+  "workerDiagnostics": null,
+  "executionRevisions": null,
+  "records": [
+    {"common":5444,"job":3677,"epoch":1,"worker":"gt12","generation":null,"leased":"2026-11-06T23:56:53Z","ended":"2026-11-07T00:24:09Z","event":"lease_expired","state":"queued"},
+    {"common":5444,"job":3677,"epoch":2,"worker":"gt12","generation":null,"leased":"2026-11-07T00:41:53Z","ended":"2026-11-07T00:59:43Z","event":"lease_expired","state":"queued"},
+    {"common":5444,"job":3677,"epoch":3,"worker":"nab-9s","generation":null,"leased":"2026-11-07T01:11:08Z","ended":"2026-11-07T01:32:37Z","event":"lease_expired","state":"failed"},
+    {"common":5444,"job":3677,"epoch":4,"worker":"gt12","generation":1,"leased":"2026-11-07T03:10:13Z","ended":null,"event":"completed","state":null},
+    {"common":5404,"job":null,"epoch":1,"worker":"nab-9s","generation":null,"leased":"2026-11-06T16:10:08Z","ended":null,"event":null,"state":null},
+    {"common":5404,"job":null,"epoch":2,"worker":"nab-9s","generation":null,"leased":"2026-11-07T00:10:12Z","ended":"2026-11-07T00:25:40Z","event":"expired","state":"queued"},
+    {"common":5404,"job":null,"epoch":3,"worker":"gt12","generation":null,"leased":"2026-11-07T00:41:55Z","ended":"2026-11-07T00:57:08Z","event":"expired","state":"queued"},
+    {"common":5404,"job":null,"epoch":4,"worker":"nab-9s","generation":null,"leased":"2026-11-07T01:12:38Z","ended":"2026-11-07T01:27:38Z","event":"expired","state":"failed"},
+    {"common":5404,"job":null,"epoch":5,"worker":"nab-9s","generation":1,"leased":"2026-11-07T03:20:15Z","ended":"2026-11-07T03:35:36Z","event":"expired","state":"queued"},
+    {"common":5404,"job":null,"epoch":6,"worker":"gt12","generation":null,"leased":"2026-11-07T03:50:06Z","ended":"2026-11-07T04:05:34Z","event":"expired","state":"queued"},
+    {"common":5404,"job":null,"epoch":7,"worker":"gt12","generation":null,"leased":"2026-11-07T04:15:10Z","ended":"2026-11-07T04:30:16Z","event":"expired","state":"failed"},
+    {"common":5404,"job":null,"epoch":8,"worker":"nab-9s","generation":2,"leased":"2026-11-07T08:28:36Z","ended":null,"event":"completed","state":null}
+  ]
+}

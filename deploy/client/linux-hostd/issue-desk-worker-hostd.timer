@@ -1,0 +1,10 @@
+[Unit]
+Description=issue-desk Workerのホスト更新を5分周期で確認
+
+[Timer]
+OnBootSec=2min
+OnUnitInactiveSec=5min
+Unit=issue-desk-worker-hostd.service
+
+[Install]
+WantedBy=timers.target

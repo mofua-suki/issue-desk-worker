@@ -1,0 +1,221 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decision",
+    "summary",
+    "breaking",
+    "tooLarge",
+    "findings",
+    "findingKinds",
+    "findingSeverities",
+    "findingSpecs",
+    "followups",
+    "followupSpecs",
+    "improvements",
+    "postMergeChecks",
+    "userJudgments",
+    "resolvableUncertainties",
+    "recordOnly",
+    "previousFindings",
+    "interrupts"
+  ],
+  "properties": {
+    "decision": {
+      "type": "string",
+      "enum": [
+        "approve",
+        "hold"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "breaking": {
+      "type": "boolean"
+    },
+    "tooLarge": {
+      "type": "boolean"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "findingKinds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "data",
+          "security",
+          "regression",
+          "acceptance",
+          "blocking",
+          "other"
+        ]
+      }
+    },
+    "findingSeverities": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "must",
+          "minor"
+        ]
+      }
+    },
+    "findingSpecs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "group",
+          "problem",
+          "expected",
+          "test",
+          "externalCheckOnly"
+        ],
+        "properties": {
+          "externalCheckOnly": {
+            "type": "boolean",
+            "description": "この指摘が実装PC外の確認だけならtrue。コードやテストの変更を含む場合や不明な場合はfalse。通常は実装PC外の確認だけをpostMergeChecksへ記す。"
+          },
+          "group": {
+            "type": "string"
+          },
+          "problem": {
+            "type": "string"
+          },
+          "expected": {
+            "type": "string"
+          },
+          "test": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "followups": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "followupSpecs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "group",
+          "problem",
+          "expected",
+          "test"
+        ],
+        "properties": {
+          "group": {
+            "type": "string"
+          },
+          "problem": {
+            "type": "string"
+          },
+          "expected": {
+            "type": "string"
+          },
+          "test": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "improvements": {
+      "type": "array",
+      "description": "コードやテストで対応できる指摘など、今後の改善を書く。実装PCの作業ツリーでは実行できない確認だけが残る場合はpostMergeChecksに記す。",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recordOnly": {
+      "type": "array",
+      "description": "findings / improvements / resolvableUncertainties の本文と完全に同じ文字列を入れる。",
+      "items": {
+        "type": "string"
+      }
+    },
+    "postMergeChecks": {
+      "type": "array",
+      "description": "マージを止める必要のない留意点。マージ後や配備後に確かめればよい点、運用上の注意を書く。作業ツリー内で確認できる重要な根拠が読めない場合を移す欄ではない。実装PCの作業ツリーでは実行できない種類の確認（配備先、本番記録、別PC、外部サービス、コントローラー側の記録など）だけが残る場合は、未確認の内容・理由・後で行う確認方法を記す。これだけでは保留しない。実際に見つかった重大な問題や利用者の判断が要る事項は別に扱う。",
+      "items": {
+        "type": "string"
+      }
+    },
+    "userJudgments": {
+      "type": "array",
+      "description": "利用者の判断が要る事項だけを書く。1件でもあればdecisionによらずマージを止める。止める必要のない留意点は書かない。",
+      "items": {
+        "type": "string"
+      }
+    },
+    "resolvableUncertainties": {
+      "type": "array",
+      "description": "マージを止めずに後から解消してよい事項を書く。これだけではマージは止まらず、内容はimprovementsへ移る。受入条件、回帰、セキュリティ、データ損失、公開API/設定/DBの非互換、停止・復旧に関わる作業ツリー内で確認できる読み取れない根拠は書かず、findingSeverities=mustの指摘かuserJudgmentsに書く。実装PCの作業ツリーでは実行できない種類の確認だけが残る場合はpostMergeChecksに記す。",
+      "items": {
+        "type": "string"
+      }
+    },
+    "previousFindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "index",
+          "status",
+          "current"
+        ],
+        "properties": {
+          "index": {
+            "type": "integer"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "resolved",
+              "unresolved"
+            ]
+          },
+          "current": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "interrupts": {
+      "type": "array",
+      "description": "早く対応すべき軽微な項目の本文と理由。",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text",
+          "reason"
+        ],
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

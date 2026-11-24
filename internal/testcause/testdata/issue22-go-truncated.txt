@@ -1,0 +1,2 @@
+--- FAIL: TestFailure (0.00s)
+    sample_test.go:4: expected value

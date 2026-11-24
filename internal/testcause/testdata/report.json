@@ -1,0 +1,1369 @@
+[
+  {
+    "input": {
+      "kind": "change",
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        }
+      },
+      "baseline": {
+        "sha": "cccccccccccccccccccccccccccccccccccccccc",
+        "baseSha": "dddddddddddddddddddddddddddddddddddddddd",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        }
+      }
+    },
+    "expected": {
+      "version": 1,
+      "kind": "baseline",
+      "reason": "同じ基点・実行条件でテスト識別と診断指紋が一致しました。",
+      "route": "main-repair",
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "permissionEvidence": null,
+        "passEvidence": null,
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        },
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ]
+      },
+      "baseline": {
+        "sha": "cccccccccccccccccccccccccccccccccccccccc",
+        "baseSha": "dddddddddddddddddddddddddddddddddddddddd",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "permissionEvidence": null,
+        "passEvidence": null,
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        },
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ]
+      },
+      "baseShaMatches": true,
+      "commandMatches": true,
+      "environmentMatches": true
+    }
+  },
+  {
+    "input": {
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        }
+      },
+      "baseline": {
+        "sha": "cccccccccccccccccccccccccccccccccccccccc",
+        "baseSha": "dddddddddddddddddddddddddddddddddddddddd",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "full-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": true,
+        "environmentFailure": null,
+        "failures": [],
+        "failureEvidence": null,
+        "passEvidence": {
+          "record": {
+            "status": "passed",
+            "sha": "cccccccccccccccccccccccccccccccccccccccc",
+            "startedAt": "2026-10-31T23:00:00Z",
+            "finishedAt": "2026-11-01T00:00:00.000Z",
+            "files": 1,
+            "ms": 100,
+            "failedFiles": [],
+            "excerpt": "",
+            "failures": {
+              "names": [],
+              "complete": true
+            },
+            "execution": {
+              "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "baseSha": "dddddddddddddddddddddddddddddddddddddddd"
+            }
+          },
+          "run": {
+            "code": 0,
+            "truncated": false,
+            "killed": null
+          },
+          "sha": "cccccccccccccccccccccccccccccccccccccccc",
+          "baseSha": "dddddddddddddddddddddddddddddddddddddddd",
+          "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "at": "2026-11-01T00:00:00.000Z",
+          "source": "full-test"
+        }
+      }
+    },
+    "expected": {
+      "version": 1,
+      "kind": "change",
+      "reason": "同じ基点・実行条件の検査は合格し、対象では失敗しています。",
+      "route": "issue-repair",
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "permissionEvidence": null,
+        "passEvidence": null,
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        },
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ]
+      },
+      "baseline": {
+        "sha": "cccccccccccccccccccccccccccccccccccccccc",
+        "baseSha": "dddddddddddddddddddddddddddddddddddddddd",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "full-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": true,
+        "environmentFailure": null,
+        "permissionEvidence": null,
+        "passEvidence": {
+          "record": {
+            "status": "passed",
+            "sha": "cccccccccccccccccccccccccccccccccccccccc",
+            "startedAt": "2026-10-31T23:00:00Z",
+            "finishedAt": "2026-11-01T00:00:00.000Z",
+            "files": 1,
+            "ms": 100,
+            "failedFiles": [],
+            "excerpt": "",
+            "failures": {
+              "names": [],
+              "complete": true
+            },
+            "execution": {
+              "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "baseSha": "dddddddddddddddddddddddddddddddddddddddd"
+            }
+          },
+          "run": {
+            "code": 0,
+            "truncated": false,
+            "killed": null
+          },
+          "sha": "cccccccccccccccccccccccccccccccccccccccc",
+          "baseSha": "dddddddddddddddddddddddddddddddddddddddd",
+          "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "at": "2026-11-01T00:00:00.000Z",
+          "source": "full-test"
+        },
+        "failureEvidence": null,
+        "failures": []
+      },
+      "baseShaMatches": true,
+      "commandMatches": true,
+      "environmentMatches": true
+    }
+  },
+  {
+    "input": {
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        }
+      },
+      "baselines": [
+        {
+          "sha": "cccccccccccccccccccccccccccccccccccccccc",
+          "baseSha": "dddddddddddddddddddddddddddddddddddddddd",
+          "at": "2026-11-01T00:00:00.000Z",
+          "source": "fixed-test",
+          "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "conditionsComplete": true,
+          "complete": true,
+          "passed": false,
+          "environmentFailure": null,
+          "failures": [
+            {
+              "test": "不合格の検査",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ],
+          "failureEvidence": {
+            "evidence": {
+              "version": 1,
+              "names": [
+                "不合格の検査"
+              ],
+              "total": 1,
+              "complete": true,
+              "timeout": null
+            },
+            "run": {
+              "code": 1,
+              "truncated": false,
+              "killed": null
+            }
+          }
+        },
+        {
+          "sha": "cccccccccccccccccccccccccccccccccccccccc",
+          "baseSha": "dddddddddddddddddddddddddddddddddddddddd",
+          "at": "2026-11-01T00:00:00.000Z",
+          "source": "full-test",
+          "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "conditionsComplete": true,
+          "complete": true,
+          "passed": true,
+          "environmentFailure": null,
+          "failures": [],
+          "failureEvidence": null,
+          "passEvidence": {
+            "record": {
+              "status": "passed",
+              "sha": "cccccccccccccccccccccccccccccccccccccccc",
+              "startedAt": "2026-10-31T23:00:00Z",
+              "finishedAt": "2026-11-01T00:00:00.000Z",
+              "files": 1,
+              "ms": 100,
+              "failedFiles": [],
+              "excerpt": "",
+              "failures": {
+                "names": [],
+                "complete": true
+              },
+              "execution": {
+                "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "baseSha": "dddddddddddddddddddddddddddddddddddddddd"
+              }
+            },
+            "run": {
+              "code": 0,
+              "truncated": false,
+              "killed": null
+            },
+            "sha": "cccccccccccccccccccccccccccccccccccccccc",
+            "baseSha": "dddddddddddddddddddddddddddddddddddddddd",
+            "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "at": "2026-11-01T00:00:00.000Z",
+            "source": "full-test"
+          }
+        }
+      ]
+    },
+    "expected": {
+      "version": 1,
+      "kind": "unknown",
+      "reason": "同じ比較条件の完全な基点観測に合否または失敗診断の矛盾があります。",
+      "route": "issue-repair",
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "permissionEvidence": null,
+        "passEvidence": null,
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        },
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ]
+      },
+      "baseline": {
+        "sha": "cccccccccccccccccccccccccccccccccccccccc",
+        "baseSha": "dddddddddddddddddddddddddddddddddddddddd",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "permissionEvidence": null,
+        "passEvidence": null,
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        },
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ]
+      },
+      "baselines": [
+        {
+          "sha": "cccccccccccccccccccccccccccccccccccccccc",
+          "baseSha": "dddddddddddddddddddddddddddddddddddddddd",
+          "at": "2026-11-01T00:00:00.000Z",
+          "source": "fixed-test",
+          "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "conditionsComplete": true,
+          "complete": true,
+          "passed": false,
+          "environmentFailure": null,
+          "permissionEvidence": null,
+          "passEvidence": null,
+          "failureEvidence": {
+            "evidence": {
+              "version": 1,
+              "names": [
+                "不合格の検査"
+              ],
+              "total": 1,
+              "complete": true,
+              "timeout": null
+            },
+            "run": {
+              "code": 1,
+              "truncated": false,
+              "killed": null
+            }
+          },
+          "failures": [
+            {
+              "test": "不合格の検査",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+            }
+          ]
+        },
+        {
+          "sha": "cccccccccccccccccccccccccccccccccccccccc",
+          "baseSha": "dddddddddddddddddddddddddddddddddddddddd",
+          "at": "2026-11-01T00:00:00.000Z",
+          "source": "full-test",
+          "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "conditionsComplete": true,
+          "complete": true,
+          "passed": true,
+          "environmentFailure": null,
+          "permissionEvidence": null,
+          "passEvidence": {
+            "record": {
+              "status": "passed",
+              "sha": "cccccccccccccccccccccccccccccccccccccccc",
+              "startedAt": "2026-10-31T23:00:00Z",
+              "finishedAt": "2026-11-01T00:00:00.000Z",
+              "files": 1,
+              "ms": 100,
+              "failedFiles": [],
+              "excerpt": "",
+              "failures": {
+                "names": [],
+                "complete": true
+              },
+              "execution": {
+                "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                "baseSha": "dddddddddddddddddddddddddddddddddddddddd"
+              }
+            },
+            "run": {
+              "code": 0,
+              "truncated": false,
+              "killed": null
+            },
+            "sha": "cccccccccccccccccccccccccccccccccccccccc",
+            "baseSha": "dddddddddddddddddddddddddddddddddddddddd",
+            "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "at": "2026-11-01T00:00:00.000Z",
+            "source": "full-test"
+          },
+          "failureEvidence": null,
+          "failures": []
+        }
+      ],
+      "baseShaMatches": true,
+      "commandMatches": true,
+      "environmentMatches": true
+    }
+  },
+  {
+    "input": {
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": "permission",
+        "failures": [],
+        "failureEvidence": null,
+        "permissionEvidence": {
+          "code": "EACCES",
+          "syscall": "lstat",
+          "path": "/outside",
+          "tree": "/workspace/project",
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          },
+          "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+          "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "at": "2026-11-01T00:00:00.000Z",
+          "source": "fixed-test"
+        }
+      }
+    },
+    "expected": {
+      "version": 1,
+      "kind": "environment",
+      "reason": "既存の環境判定がテスト開始前の作業領域外の権限不足を確認しました。",
+      "route": "environment-hold",
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": "permission",
+        "permissionEvidence": {
+          "code": "EACCES",
+          "syscall": "lstat",
+          "path": "/outside",
+          "tree": "/workspace/project",
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          },
+          "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+          "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "at": "2026-11-01T00:00:00.000Z",
+          "source": "fixed-test"
+        },
+        "passEvidence": null,
+        "failureEvidence": null,
+        "failures": []
+      },
+      "baseline": null,
+      "baseShaMatches": null,
+      "commandMatches": null,
+      "environmentMatches": null
+    }
+  },
+  {
+    "input": {
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": "permission",
+        "failures": [],
+        "failureEvidence": null,
+        "permissionEvidence": {
+          "code": "EACCES",
+          "syscall": "lstat",
+          "path": "/workspace/project/src",
+          "tree": "/workspace/project",
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          },
+          "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+          "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "at": "2026-11-01T00:00:00.000Z",
+          "source": "fixed-test"
+        }
+      }
+    },
+    "expected": {
+      "version": 1,
+      "kind": "unknown",
+      "reason": "対象の証拠が不完全です。途中打切りや取得不足から原因を確定できません。",
+      "route": "issue-repair",
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": false,
+        "passed": false,
+        "environmentFailure": null,
+        "permissionEvidence": null,
+        "passEvidence": null,
+        "failureEvidence": null,
+        "failures": []
+      },
+      "baseline": null,
+      "baseShaMatches": null,
+      "commandMatches": null,
+      "environmentMatches": null
+    }
+  },
+  {
+    "input": {
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "failureEvidence": null
+      }
+    },
+    "expected": {
+      "version": 1,
+      "kind": "unknown",
+      "reason": "対象の証拠が不完全です。途中打切りや取得不足から原因を確定できません。",
+      "route": "issue-repair",
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": false,
+        "passed": false,
+        "environmentFailure": null,
+        "permissionEvidence": null,
+        "passEvidence": null,
+        "failureEvidence": null,
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ]
+      },
+      "baseline": null,
+      "baseShaMatches": null,
+      "commandMatches": null,
+      "environmentMatches": null
+    }
+  },
+  {
+    "input": {
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false
+          }
+        }
+      }
+    },
+    "expected": {
+      "version": 1,
+      "kind": "unknown",
+      "reason": "対象の証拠が不完全です。途中打切りや取得不足から原因を確定できません。",
+      "route": "issue-repair",
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": false,
+        "passed": false,
+        "environmentFailure": null,
+        "permissionEvidence": null,
+        "passEvidence": null,
+        "failureEvidence": null,
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ]
+      },
+      "baseline": null,
+      "baseShaMatches": null,
+      "commandMatches": null,
+      "environmentMatches": null
+    }
+  },
+  {
+    "input": {
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        }
+      },
+      "baseline": {
+        "sha": "cccccccccccccccccccccccccccccccccccccccc",
+        "baseSha": "dddddddddddddddddddddddddddddddddddddddd",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        }
+      }
+    },
+    "expected": {
+      "version": 1,
+      "kind": "unknown",
+      "reason": "コマンドまたは環境条件が一致しません。条件差だけでは原因を確定できません。",
+      "route": "issue-repair",
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "permissionEvidence": null,
+        "passEvidence": null,
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        },
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ]
+      },
+      "baseline": {
+        "sha": "cccccccccccccccccccccccccccccccccccccccc",
+        "baseSha": "dddddddddddddddddddddddddddddddddddddddd",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "permissionEvidence": null,
+        "passEvidence": null,
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        },
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ]
+      },
+      "baseShaMatches": true,
+      "commandMatches": false,
+      "environmentMatches": true
+    }
+  },
+  {
+    "input": {
+      "target": {
+        "sha": null,
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        }
+      }
+    },
+    "expected": {
+      "version": 1,
+      "kind": "unknown",
+      "reason": "対象SHAを確認できません。",
+      "route": "issue-repair",
+      "target": {
+        "sha": null,
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "permissionEvidence": null,
+        "passEvidence": null,
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        },
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ]
+      },
+      "baseline": null,
+      "baseShaMatches": null,
+      "commandMatches": null,
+      "environmentMatches": null
+    }
+  },
+  {
+    "input": {
+      "kind": "baseline"
+    },
+    "expected": {
+      "version": 1,
+      "kind": "unknown",
+      "reason": "対象の構造化された比較証拠がありません。",
+      "route": "issue-repair",
+      "target": null,
+      "baseline": null,
+      "baseShaMatches": null,
+      "commandMatches": null,
+      "environmentMatches": null
+    }
+  },
+  {
+    "input": {
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        },
+        "arbitrary": "drop"
+      },
+      "baseline": {
+        "sha": "cccccccccccccccccccccccccccccccccccccccc",
+        "baseSha": "dddddddddddddddddddddddddddddddddddddddd",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        }
+      }
+    },
+    "expected": {
+      "version": 1,
+      "kind": "baseline",
+      "reason": "同じ基点・実行条件でテスト識別と診断指紋が一致しました。",
+      "route": "main-repair",
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "permissionEvidence": null,
+        "passEvidence": null,
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        },
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ]
+      },
+      "baseline": {
+        "sha": "cccccccccccccccccccccccccccccccccccccccc",
+        "baseSha": "dddddddddddddddddddddddddddddddddddddddd",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "permissionEvidence": null,
+        "passEvidence": null,
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        },
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ]
+      },
+      "baseShaMatches": true,
+      "commandMatches": true,
+      "environmentMatches": true
+    }
+  },
+  {
+    "input": {
+      "target": {
+        "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "baseSha": "cccccccccccccccccccccccccccccccccccccccc",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        }
+      },
+      "baseline": {
+        "sha": "cccccccccccccccccccccccccccccccccccccccc",
+        "baseSha": "dddddddddddddddddddddddddddddddddddddddd",
+        "at": "2026-11-01T00:00:00.000Z",
+        "source": "fixed-test",
+        "command": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "environment": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "conditionsComplete": true,
+        "complete": true,
+        "passed": false,
+        "environmentFailure": null,
+        "failures": [
+          {
+            "test": "不合格の検査",
+            "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          }
+        ],
+        "failureEvidence": {
+          "evidence": {
+            "version": 1,
+            "names": [
+              "不合格の検査"
+            ],
+            "total": 1,
+            "complete": true,
+            "timeout": null
+          },
+          "run": {
+            "code": 1,
+            "truncated": false,
+            "killed": null
+          }
+        }
+      }
+    },
+    "budget": 100,
+    "expected": {
+      "version": 1,
+      "kind": "unknown",
+      "reason": "対象の構造化された比較証拠がありません。",
+      "route": "issue-repair",
+      "target": null,
+      "baseline": null,
+      "baseShaMatches": null,
+      "commandMatches": null,
+      "environmentMatches": null
+    }
+  }
+]

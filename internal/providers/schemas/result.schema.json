@@ -1,0 +1,445 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "status",
+    "incomplete",
+    "prerequisiteMissing",
+    "summary",
+    "questions",
+    "tests",
+    "unverified",
+    "unverifiedKinds",
+    "followupIssues",
+    "selfCheck",
+    "prevention",
+    "assumptions",
+    "similar",
+    "acceptanceTransfers",
+    "scopeExtensions"
+  ],
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "question",
+        "failed"
+      ]
+    },
+    "incomplete": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "未指定は null。オブジェクトは failed の範囲未完了だけに指定し、理由と完了部分・残作業を返す。completed・remaining の未指定も null。",
+      "additionalProperties": false,
+      "required": [
+        "reason",
+        "completed",
+        "remaining"
+      ],
+      "properties": {
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "completed": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "remaining": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "prerequisiteMissing": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "先行Issueの前提成果物不足だけに指定。通常はnull。status=failed、incompleteはnull、questionsは空にする。",
+      "additionalProperties": false,
+      "required": [
+        "reason",
+        "artifacts"
+      ],
+      "properties": {
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "artifacts": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "artifact",
+              "repo",
+              "issue"
+            ],
+            "properties": {
+              "artifact": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200
+              },
+              "repo": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$",
+                "maxLength": 200
+              },
+              "issue": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 9007199254740991
+              }
+            }
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unverified": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unverifiedKinds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "fixed_test_by_controller",
+          "other"
+        ]
+      }
+    },
+    "tests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "command",
+          "status",
+          "detail"
+        ],
+        "properties": {
+          "command": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "passed",
+              "failed",
+              "not_run"
+            ]
+          },
+          "detail": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "followupIssues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "purpose",
+          "acceptance",
+          "changePaths"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "acceptance": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "changePaths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "selfCheck": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "criterion",
+          "source",
+          "location",
+          "test",
+          "production",
+          "similarLocations",
+          "testChanges"
+        ],
+        "properties": {
+          "criterion": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "issue",
+              "instruction",
+              "review"
+            ]
+          },
+          "location": {
+            "description": "コード参照はバッククォートで囲む `リポジトリ相対パス:開始行-終了行`（1始まり、単一行は :行）。複数参照も可。絶対パス・..・ツリー外リンクは禁止。説明文は参照の外へ、適用しない理由だけの欄は「説明: 理由と実際の経路」。対象外は従来どおり「対象外」。",
+            "type": "string"
+          },
+          "test": {
+            "description": "受入条件ごとに、production と similarLocations に記した本番コードの経路・関係する境界条件を実際に通すテスト名と確認結果を対応付ける。指摘の1例だけで同種経路を確認済みにしない。テスト不要・対象外には理由を書く。キーワード一致や形式検査は実装内容の真偽・意味上の網羅性の証明ではない。確認するテスト定義を `リポジトリ相対パス:行#テスト名`（範囲も可）で記す。名前はファイル内で一意の静的な完全一致名、行は定義の開始行。不要なら「説明: 理由」。機械検査対象はnode:testの静的定義とJS/TSローカルimport・再export経路。判定不能は同じ実装実行で具体的な照合手順・コード位置・検証結果をselfCheckとunverifiedに残す。申告だけで接続確認済みにしない。",
+            "type": "string"
+          },
+          "production": {
+            "description": "本番で条件を満たすデータの流れとコード位置を4欄すべてに記録する。受入条件から変更に関係する境界条件を選び、入口と待機前後・枠取得時、生成と保存・再読込、欠測・空・不完全、実出力形式・複数記録を該当する欄で照合し、確認テストと結果を test に結び付ける。無関係な項目を機械的に列挙しない。テスト専用の手作りデータ形だけを根拠にしない。保存や画面がない条件・対象外の項目では理由と実際の経路を書く。各欄のコード参照はlocationと同じ `相対パス:行-行`、適用しない理由は「説明:」で区別する。生成元→実際の保存形→呼出入口→判定→利用者向け出口をコードと検証へ対応付ける。追加指示・再試行・後からの本文更新、判定変更と子孫、分類の許可一覧、完了状態の意味の違いを代表観点にする。差し戻しでは元の受入条件と同種入口を再照合し、注意文追加だけで接続済みにしない。意味の正しさは独立レビューが照合する。",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "origin",
+              "stored",
+              "caller",
+              "outlet"
+            ],
+            "properties": {
+              "origin": {
+                "description": "データの生成元をファイル・行等の根拠とともに記録する。関係する実出力形式・複数記録と、欠測・空・不完全を区別する箇所を照合する。",
+                "type": "string"
+              },
+              "stored": {
+                "description": "実際の保存形をファイル・行等の根拠とともに記録する。関係する生成から保存・再読込までの経路で、必要な値や欠測の扱いが保持されるか照合する。",
+                "type": "string"
+              },
+              "caller": {
+                "description": "呼び出し元をファイル・行等の根拠とともに記録する。関係する開始入口・迂回経路・状態遷移をたどり、待機前後・枠取得時の再確認を照合する。",
+                "type": "string"
+              },
+              "outlet": {
+                "description": "APIまたは画面の出口をファイル・行等の根拠とともに記録する。関係する経路の結果・欠測・停止理由が出口まで届くか照合する。",
+                "type": "string"
+              }
+            }
+          },
+          "similarLocations": {
+            "description": "受入条件ごとに変更した関数・状態・保存項目とその呼び出しを手掛かりに、変更に関係する同種入口・迂回経路・状態遷移を検索する。同じ役割の実装箇所を列挙し、検索語・範囲、各箇所の適用／対象外と根拠、各箇所が条件を満たすかの確認結果と対応テストを記録する。指摘の1例だけで検索を終えず、production・test と対応させる。ほかに見つからない場合も検索範囲と確認結果を1件書く。無関係な項目の機械的列挙はしない。",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "location",
+                "result"
+              ],
+              "properties": {
+                "location": {
+                  "type": "string"
+                },
+                "result": {
+                  "description": "この箇所が対応する受入条件または指示への適用／対象外と根拠、関係する境界条件を満たすかの確認結果とテスト名。対象外も理由を記録し、未確認を確認済みと扱わない。",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "testChanges": {
+            "description": "既存テストの期待値の変更有無と根拠を記録する。",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "changed",
+              "details"
+            ],
+            "properties": {
+              "changed": {
+                "description": "既存テストの期待値を変更したかの真偽値。",
+                "type": "boolean"
+              },
+              "details": {
+                "description": "対象テストと期待値の変更理由を、この受入条件または指示に結び付ける。変更していない場合も「既存テストの期待値は変更していない」と明記する。",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "prevention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "detail"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "test",
+            "check",
+            "automation",
+            "none"
+          ]
+        },
+        "detail": {
+          "type": "string"
+        }
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "assumption",
+          "evidence",
+          "verified"
+        ],
+        "properties": {
+          "assumption": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "verified": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "similar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "searched",
+        "found",
+        "handled",
+        "guard"
+      ],
+      "properties": {
+        "searched": {
+          "type": "string"
+        },
+        "found": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "handled": {
+          "type": "string"
+        },
+        "guard": {
+          "type": "string"
+        }
+      }
+    },
+    "acceptanceTransfers": {
+      "description": "受入条件の移管。移管なしは空配列。対応案を含む報告は24Ki文字以内。followupNumbersはfollowupIssuesの1始まり番号。",
+      "type": "array",
+      "maxItems": 30,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "criterion",
+          "artifacts",
+          "followupNumbers"
+        ],
+        "properties": {
+          "criterion": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "artifacts": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 30,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            }
+          },
+          "followupNumbers": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        }
+      }
+    },
+    "scopeExtensions": {
+      "description": "宣言範囲外で追加・更新・削除したファイルと受入条件上の必要性。Claudeステージングでは反映先を記録する。編集要求ではない。",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "reason"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

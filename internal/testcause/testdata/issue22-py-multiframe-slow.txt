@@ -1,0 +1,24 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-9.2.0, pluggy-1.7.0
+rootdir: /tmp/issue22-fixture/py
+collected 2 items
+
+test_sample.py .F                                                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_failure _________________________________
+
+    def test_failure():
+>       helper()
+
+test_sample.py:9: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def helper():
+>       assert 1 == 2
+E       assert 1 == 2
+
+test_sample.py:5: AssertionError
+=========================== short test summary info ============================
+FAILED test_sample.py::test_failure - assert 1 == 2
+==================== 1 failed, 1 passed in 75.23s (0:01:15) ====================

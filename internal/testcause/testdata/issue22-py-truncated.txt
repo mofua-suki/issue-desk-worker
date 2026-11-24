@@ -1,0 +1,9 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-9.2.0, pluggy-1.7.0
+rootdir: /tmp/issue22-fixture/py
+collected 2 items
+
+test_sample.py .F                                                        [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_failure _________________________________
